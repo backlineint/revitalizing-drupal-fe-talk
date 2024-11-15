@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+<link rel="stylesheet" href="engine/main.css">
+<link rel="stylesheet" href="theme/milano.css">
+<link rel="stylesheet" href="engine/katex/katex.min.css">
+<link rel="stylesheet" href="engine/styles/ia-viewer.css">
+<style>
+:root{
+--logo: ;
+--darkaccent1color: #fff;
+--lightaccent1color: #fff;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #fff;
+--darktitletextcolor: #fff;
+--lightbodytextcolor: #fff;
+--darkbodytextcolor: #fff;
+--lightbackgroundcolor: transparent;
+--darkbackgroundcolor: transparent;
+--bodyfont: Playfair Display;
+--titlefont: Playfair Display;
+--lightframecolor: #FFFFFF;
+--darkframecolor: #000000;
+} 
+
+</style>
+</head>
+<body class="responsive">
+<div class="reveal">
+<div class="slides">
+<section class="variable-size-headings light section-container responsive present fit-warning has-light-background fitted" data-background-color="#79bcd9" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 0.719rem;">
+        <div style="">
+          <h3 class="kicker" id="alookat">A Look at</h3><h1 id="theongoingeffortstorevitalizedrupal’sfrontend">the Ongoing Efforts to Revitalize Drupal’s Front End</h1>
+
+<p><em>Nedcamp 2024</em> </p>
+
+<p>https://bit.ly/drupal-fe-ned</p>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light title-container responsive present has-light-background fitted" data-background-color="#78bdd4" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><hgroup><p class="kicker">Part 0</p>
+
+<h2 id="housekeeping">Housekeeping</h2></hgroup></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light v-split-container responsive present has-light-background fitted" data-background-color="#78bed0" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="lookatmeeeee">Look at Meeeee!</h1>
+
+<p><a href="https://brianperry.dev">brianperry.dev</a> </p>
+<p></p><p></p>
+
+<p><del>Twitter</del> Bluesky<br> <a href="https://bsky.app/profile/wabrian.bsky.social">@wabrian.bsky.social</a> </p></div>
+        <figure style=""><img src="images/surf_full.jpg" class=" position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-background-color="#77bfcb" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/c3.jpeg" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light section-container responsive present has-light-background fitted" data-background-color="#77c0c7" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <hgroup><p class="kicker">Disclaimer:</p>
+
+<h3 id="idontknowsht.">I don't know sh!t.</h3></hgroup>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light cover-container responsive present has-light-background fitted" data-background-color="#76c2c3" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="so...">So...</h1>
+
+<h2 id="whatsgoingoninfrontenddrupal">What's going on in Front End Drupal?</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light title-container responsive present has-light-background fitted" data-background-color="#76c3be" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><hgroup><p class="kicker">Part 1</p>
+
+<h2 id="everythingisterribleandwereallslowlydying.">Everything is terrible and we're all slowly dying.</h2></hgroup></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light has-background-image section-container responsive present has-light-background fitted" data-background-image="images/photo-1530598343134-ee226a2e90e4.jpg" data-state="background-filter-darken" data-background-color="#76c4ba" style="display: grid;" data-updated="true">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="canispiralforalittlebit">Can I spiral for a little bit?</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light section-container responsive present has-light-background fitted" data-background-color="#75c5b6" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="nobodylikestwig...">Nobody likes Twig...</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light section-container responsive present has-light-background fitted" data-background-color="#75c6b1" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="andnobodylikeslayoutbuilder...">and Nobody likes Layout Builder...</h3>
+
+<p>(Except for <a href="https://nedcamp.org/sessions/2024/waiting-drupal-cms-starshot-dont-get-layout-builder-working-right-now">Rod</a>)</p>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light section-container responsive present has-light-background fitted" data-background-color="#74c5ab" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="andweremissingoutonalloftheinnovationinthejavascriptecosystem...">and we're missing out on all of the innovation in the JavaScript ecosystem...</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light section-container responsive present has-light-background fitted" data-background-color="#71b79e" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="andtherobotsarecomingforourjobs...">and the robots are coming for our jobs...</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-background-color="#6fa991" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="andwordpressisburningitselftotheground...">and WordPress is burning itself to the ground...</h3>
+<div class="single-image-wrapper"><figure><img src="images/plantin-moretus-museum-matt-mullenweg-and-dries-buytaert-1920w.jpg" class=" position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light section-container responsive present has-light-background fitted" data-background-color="#6c9b83" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="anddontgetmestartedonthiswholeelectionthing...">and don't get me started on this whole election thing...</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light v-split-container responsive present has-dark-background fitted" data-background-color="#698d76" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="andthepatriotsare3and7.">and the Patriots are 3 and 7.</h3>
+
+<p>(Ok, maybe the last few are unrelated.)</p></div>
+        <figure style=""><img src="images/pats.jpg" class=" position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light has-background-image section-container responsive present has-dark-background fitted" data-background-image="images/photo-1507097489474-c9212a8f8597.jpg" data-state="background-filter-darken" data-background-color="#667e69" style="display: grid;" data-updated="true">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="pauseforgroupspiraling">(Pause for group spiraling)</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light title-container responsive present has-dark-background fitted" data-background-color="#64705b" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><hgroup><p class="kicker">Part 2</p>
+
+<h2 id="actuallydrupalfegotkindagoodwhilewewerepanicking.">Actually, Drupal FE got kinda good while we were panicking.</h2></hgroup></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light title-image-container responsive present has-dark-background fitted" data-background-color="#61624e" data-updated="true" style="display: grid;">
+
+        <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+        <div class="layout-title-image media-grid" style="width: 100%; font-size: 0.906rem;">
+          <div style=""><p>You can disable caches and enable debugging in the UI!</p></div>
+          <figure style=""><img src="images/dev_settings.png" class=" size-contain position-center-center"></figure>
+        </div>
+        <div class="footnotes"></div>
+        <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light default-container responsive present has-dark-background fitted" data-background-color="#5e5441" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="singledirectorycomponentsimprovedx">Single Directory Components improve DX</h3>
+<div class="single-image-wrapper"><figure><img src="images/sdc.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light v-split-container responsive present has-dark-background fitted" data-background-color="#5b4633" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="sdcsmakecomponentsacoreprimitiveindrupal">SDCs make components a core primitive in Drupal</h3></div>
+        <figure style=""><img src="images/sdc_class.png" class=" size-contain position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light v-split-container responsive present has-dark-background fitted" data-background-color="#5e402a" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="recipesarentexclusivelyafeconcernbutarestillgreat">Recipes aren't exclusively a FE concern, but are still great</h3></div>
+        <figure style=""><img src="images/cookbook.png" class=" size-contain position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-dark-background fitted" data-background-color="#6a4b29" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h3 id="andthewebplatformismakingourliveseasiereveryday.">And the web platform is making our lives easier every day.</h3>
+
+<ul>
+<li>CSS without SASS</li>
+<li>jQuery Without jQuery</li>
+<li>ESNext</li>
+<li>ES Modules / Import Maps</li>
+<li>Custom Elements</li>
+<li>View Transitions</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light title-container responsive present has-dark-background fitted" data-background-color="#765727" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><hgroup><p class="kicker">Part 3</p>
+
+<h2 id="pagebuilders:thecauseofandsolutiontoalloflifesproblems.">Page builders: the cause of, and solution to all of life's problems.</h2></hgroup></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light v-split-container responsive present has-dark-background fitted" data-background-color="#826226" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="backtospiraling">Back to spiraling</h3>
+
+<p>Instructions: choose a competing page builder, and freak out about it.</p></div>
+        <figure style=""><img src="images/photo-1530598343134-ee226a2e90e4.jpg" class=" position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light full-image-container responsive present has-dark-background fitted" data-background-color="#8e6d25" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><div class="single-image-wrapper"><video controls="" class=" size-contain position-center-center" data-paused-by-reveal=""><source src="images/wix.mp4"></video></div></div>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light section-container responsive present has-dark-background fitted" data-background-color="#9b7823" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="attheveryleastlayoutbuilderhasfallenbehind.">At the very least, Layout Builder has fallen behind.</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light section-container responsive present has-light-background fitted" data-background-color="#a78322" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="thishasledtoaproliferationofalternativepagebuilders.">This has led to a proliferation of alternative page builders.</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-background-color="#b38f21" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><div class="single-image-wrapper"><video controls="" class=" size-contain position-center-center" data-paused-by-reveal=""><source src="images/mercury_trimmed.mp4"></video></div></div>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-background-color="#bf9a1f" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><div class="single-image-wrapper"><video controls="" class=" size-contain position-center-center" data-paused-by-reveal=""><source src="images/frontend_trimmed.mp4"></video></div></div>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light title-image-container responsive present has-light-background fitted" data-background-color="#cba51e" data-updated="true" style="display: grid;">
+
+        <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+        <div class="layout-title-image media-grid" style="width: 100%; font-size: 1rem;">
+          <div style=""><h4 id="andsoonexperiencebuilder">And soon <a href="https://xb-dev.ddev.site/node/1"><strong>Experience Builder</strong></a></h4></div>
+          <figure style=""><img src="images/xb-style-fix.png" class=" size-contain position-center-top"><figcaption> Live Demo? Why not!</figcaption></figure>
+        </div>
+        <div class="footnotes"></div>
+        <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light section-container responsive present has-light-background fitted" data-background-color="#d3aa1e" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="pagebuilderscanbeadoubleedgedsword">Page builders can be a double edged sword</h3>
+
+<h4 id="seekarenandjeffskeynote">See Karen and Jeff's Keynote</h4>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light title-container responsive present has-light-background fitted" data-background-color="#d7a91f" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><hgroup><p class="kicker">Part 4</p>
+
+<h2 id="improvingdrupalsfrontendbynotusingdrupalsfrontend.">Improving Drupal's Front End by not using Drupal's Front End.</h2></hgroup></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light section-container responsive present has-light-background fitted" data-background-color="#daa820" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="decoupledusecasesarentgoingaway">Decoupled use cases aren't going away</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light title-image-container responsive present has-light-background fitted" data-background-color="#dea721" data-updated="true" style="display: grid;">
+
+        <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+        <div class="layout-title-image media-grid" style="width: 100%; font-size: 1rem;">
+          <div style=""><h4 id="next.jsfordrupalhassubstantialadoption">Next.js for Drupal has substantial adoption</h4></div>
+          <figure style=""><img src="images/next-drupal.png" class=" size-contain position-center-center"></figure>
+        </div>
+        <div class="footnotes"></div>
+        <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-background-color="#e1a622" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="therearepowerfulnewtoolsinthecontribecosystem">There are powerful new tools in the contrib ecosystem</h3>
+
+<ul>
+<li>GraphQL Compose</li>
+<li>Decoupled Preview iFrame</li>
+<li>Frontend Editing</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light title-image-container responsive present has-light-background fitted" data-background-color="#e5a523" data-updated="true" style="display: grid;">
+
+        <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+        <div class="layout-title-image media-grid" style="width: 100%; font-size: 1rem;">
+          <div style=""><h4 id="pitch-burghfundedthedrupalapiclient">Pitch-burgh funded the Drupal API Client</h4></div>
+          <figure style=""><img src="images/api-client.png" class=" size-contain position-center-center"></figure>
+        </div>
+        <div class="footnotes"></div>
+        <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light grid-container responsive present has-light-background fitted" data-background-color="#e8a423" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-grid grid-items-4 media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="excitingnewprojectsarepoppingupallthetime">Exciting new projects are popping up all the time</h3></div><figure style=""><img src="images/octahedroid.png" class=" position-center-top"></figure><figure style=""><img src="images/node_hive.png" class=" position-center-top"></figure><figure style=""><img src="images/blokkli.png" class=" position-center-top"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-light-background fitted" data-background-color="#eba324" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><h3 id="sanctuary">Sanctuary</h3>
+
+<p>My humble attempt to combine many great tools together</p>
+
+<ul>
+<li>Astro starter kits
+
+<ul>
+<li>Astro Dev Toolbar App</li>
+<li>Type safety and inferred schemas</li>
+</ul></li>
+<li>Drupal Recipes
+
+<ul>
+<li>Integrated preview</li>
+<li>Frontend editing</li>
+</ul></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-background-color="#efa225" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><p><a href="https://sanctuary.ddev.site/home">Sneak Peek</a>!</p>
+<div class="single-image-wrapper"><figure><img src="images/sanctuary.png" class=" size-contain position-center-center"><figcaption> Another live demo? Sure!</figcaption></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light title-container responsive present has-light-background fitted" data-background-color="#f2a126" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><hgroup><p class="kicker">Part 5</p>
+
+<h2 id="thewildideasmightnotbesowildafterall.">The wild ideas might not be so wild after all.</h2></hgroup></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light v-split-container responsive present has-light-background fitted" data-background-color="#f29e26" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h3 id="jsxthemeengine">JSX Theme Engine</h3>
+
+<ul>
+<li>Renders entire page using JSX.</li>
+<li>Still "in Drupal"</li>
+<li>Translation layer for render arrays
+
+<ul>
+<li>Props - serialized attributes</li>
+<li>Slots - JSX Fragment or HTML element</li>
+</ul></li>
+</ul></div>
+        <figure style=""><img src="images/full_jsx_project_page.png" class=" size-contain position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-background-color="#f19925" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>I swear to you, it actually works.</p>
+<div class="single-image-wrapper"><figure><img src="images/jsx_engine.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-background-color="#ef9524" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>Similar concepts in Laravel</p>
+<div class="single-image-wrapper"><figure><img src="images/inertia.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light v-split-container responsive present has-light-background fitted" data-background-color="#ee9123" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="xbevolvesthisconceptintoasemi-coupledthemeengine.">XB evolves this concept into a 'semi-coupled' theme engine.</h3>
+
+<ul>
+<li>Form API form injected into React app.</li>
+</ul></div>
+        <figure style=""><img src="images/xb-style-fix.png" class=" position-right-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light v-split-container responsive present has-light-background fitted" data-background-color="#ec8d22" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="imagineifyoucouldchoosebetweentwigandjsxatanylevelofyourtheme">Imagine if you could choose between Twig and JSX at any level of your theme?</h3></div>
+        <figure style=""><img src="images/photo-1719856331249-ef3bce2a5304.jpg" class=" position-center-center"><figcaption>Photo by notorious v1ruS on <a href="https://unsplash.com/photos/a-large-explosion-of-smoke-is-coming-out-of-a-bottle-VR7BeEbpD9Y">Unsplash</a></figcaption></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light v-split-container responsive present has-light-background fitted" data-background-color="#eb8821" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="waytoomuchtogetintohere.">Way too much to get into here.</h3>
+
+<ul>
+<li><a href="https://www.youtube.com/watch?v=l2oU3sVwro0">DrupalCon Barcelona Talk</a> -&gt;</li>
+<li><a href="https://www.drupal.org/project/experience_builder/issues/3446434">XB specific docs for this concept</a></li>
+<li><a href="https://www.drupal.org/project/jsx">JSX Theme Engine Project</a></li>
+</ul></div>
+        <div class="videoWrapper youtube" data-id="l2oU3sVwro0" onclick="iASpeaker.insertYouTubeIFrame(this);" style=""><div class="single-image-wrapper"><img src="https://i.ytimg.com/vi/l2oU3sVwro0/sddefault.jpg"></div><div class="playButton"></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light title-image-container responsive present has-light-background fitted" data-background-color="#e98420" data-updated="true" style="display: grid;">
+
+        <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+        <div class="layout-title-image media-grid" style="width: 100%; font-size: 0.953rem;">
+          <div style=""><p>Even wilder exploratory concepts in the issue queue</p></div>
+          <figure style=""><img src="images/xb-js-component-preact-tailwind-poc.gif" class=" size-contain position-center-center"></figure>
+        </div>
+        <div class="footnotes"></div>
+        <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light v-split-container responsive present has-light-background fitted" data-background-color="#e8801f" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="mydreamversionofthisissimilartoastrosislandsarchitecture">My dream version of this is similar to Astro's Islands Architecture</h3></div>
+        <figure style=""><img src="images/islands-architecture-1.png" class=" size-contain position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light title-image-container responsive present has-light-background fitted" data-background-color="#e67b1f" data-updated="true" style="display: grid;">
+
+        <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+        <div class="layout-title-image media-grid" style="width: 100%; font-size: 1rem;">
+          <div style=""><p><a href="https://drupal-islands-sandbox.ddev.site/islands-examples">Islands Module</a> - my experiment</p></div>
+          <figure style=""><img src="images/islands-vue-twig.png" class=" position-center-center"></figure>
+        </div>
+        <div class="footnotes"></div>
+        <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light title-image-container responsive present has-light-background fitted" data-background-color="#e5771e" data-updated="true" style="display: grid;">
+
+        <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+        <div class="layout-title-image media-grid" style="width: 100%; font-size: 1rem;">
+          <div style=""><p>The WWW (Wild World of WebAssembly)</p></div>
+          <figure style=""><img src="images/installer.png" class=" position-center-center"></figure>
+        </div>
+        <div class="footnotes"></div>
+        <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light section-container responsive present has-light-background fitted" data-background-color="#e1711f" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h4 class="kicker" id="ambitiousvariationsofmodernjsindrupalwilleventuallyhitanssrwall.">Ambitious variations of modern JS in Drupal will eventually hit an SSR wall.</h4><h3 id="canwasmsolvethis">Can WASM solve this?</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light title-container responsive present has-light-background fitted" data-background-color="#dd6921" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><hgroup><p class="kicker">Part 6</p>
+
+<h2 id="sowhatdoesitallmean">So what does it all mean?</h2></hgroup></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light section-container responsive present has-dark-background fitted" data-background-color="#da6223" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <hgroup><p class="kicker">Reminder:</p>
+
+<h3 id="idontknowsht.">I don't know sh!t.</h3></hgroup>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light section-container responsive present has-dark-background fitted" data-background-color="#d65b25" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="drupalappearstobegoingallinonexperiencebuilder">Drupal appears to be going all in on Experience Builder</h3>
+
+<h4 id="whetheryoulikeitornot"><em>Whether you like it or not</em></h4>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light section-container responsive present has-dark-background fitted" data-background-color="#d25427" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="thisworkmayalsorepresentdrupalsonerealshottoexpandbeyondtwig.">This work may also represent Drupal's one real shot to expand beyond Twig.</h3>
+
+<h4 id="beforeitstoolate"><em>Before it's too late</em></h4>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light section-container responsive present has-dark-background fitted" data-background-color="#ce4d29" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="amorejsfriendlydrupalisamoredecoupledfriendlydrupalaswell.">A more JS friendly Drupal is a more decoupled friendly Drupal as well.</h3>
+
+<h4 id="jsonstorageeverywhere"><em>JSON storage everywhere</em></h4>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light section-container responsive present has-dark-background fitted" data-background-color="#ca462b" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="nowisthetimetochallengeeverythingyouthoughtyouknewaboutdrupalfe.">Now is the time to challenge everything you thought you knew about Drupal FE.</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light section-container responsive present has-dark-background fitted" data-background-color="#c63f2d" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="push.">Push.</h3>
+
+<h3 id="experiment.">Experiment.</h3>
+
+<h3 id="contribute.">Contribute.</h3>
+
+<h3 id="maybeevenpray.">Maybe even pray.</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light title-container responsive present has-dark-background fitted" data-background-color="#c2382f" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><hgroup><p class="kicker">Thanks!</p>
+
+<h2 id="anyquestions">Any questions?</h2></hgroup></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section></div>
+</div>
+<script src="engine/index.js"></script>
+<script src="engine/pptxgen.min.js"></script>
+<script src="engine/pfill.js"></script>
+<script src="engine/published.js"></script>
+<script>
+Reveal.configure({
+progress:true,
+progress:true,
+dependencies: [
+  {
+    src: "engine/highlight.js",
+    sync: true,
+    callback: function () {
+      hljs.initHighlightingOnLoad();
+    },
+  },
+],
+});
+</script>
+</body>
+</html>
